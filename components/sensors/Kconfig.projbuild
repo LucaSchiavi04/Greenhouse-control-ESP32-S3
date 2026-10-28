@@ -1,0 +1,30 @@
+menu "Sensors Configuration"
+
+    choice SENSORS_LDR_ADC_UNIT
+        prompt "LDR ADC Unit"
+        default SENSORS_LDR_ADC_UNIT_1
+        help
+            Unidade de ADC (ADC_UNIT_1 ou ADC_UNIT_2) que será usada pelo LDR.
+
+        config SENSORS_LDR_ADC_UNIT_1
+            bool "ADC Unit 1"
+        config SENSORS_LDR_ADC_UNIT_2
+            bool "ADC Unit 2"
+    endchoice
+
+    config SENSORS_LDR_ADC_CHANNEL
+        int "LDR ADC Channel (0-9)"
+        range 0 SOC_ADC_MAX_CHANNEL_NUM
+        default 0
+        help
+            Selecione o canal do ADC (0 a 9) correspondente ao pino conectado ao LDR.
+            No ESP32-S3, por exemplo, o Canal 0 do ADC1 equivale ao GPIO1.
+
+    config DHT11_PIN
+        int "DHT11 GPIO Number"
+        range 0 SOC_GPIO_IN_RANGE_MAX
+        default 15
+        help
+            Número do GPIO (IOxx) para o sensor DHT11.
+
+endmenu

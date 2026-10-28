@@ -1,0 +1,25 @@
+menu "Display Configuration"
+
+    config DISPLAY_SDA_GPIO
+        int "I2C SDA GPIO Number"
+        range 0 SOC_GPIO_PIN_COUNT
+        default 8
+        help
+            Número do pino GPIO para a linha de dados SDA do barramento I2C.
+
+    config DISPLAY_SCL_GPIO
+        int "I2C SCL GPIO Number"
+        range 0 SOC_GPIO_PIN_COUNT
+        default 9
+        help
+            Número do pino GPIO para a linha de clock SCL do barramento I2C.
+
+    config DISPLAY_RESET_GPIO
+        int "Display Reset GPIO Number"
+        range -1 SOC_GPIO_PIN_COUNT
+        default -1
+        help
+            Número do pino GPIO conectado ao pino de Reset do display OLED.
+            Insira -1 caso seu display não utilize um pino de reset dedicado.
+
+endmenu

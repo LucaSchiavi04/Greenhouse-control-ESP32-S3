@@ -1,0 +1,70 @@
+menu "GPIOs Configuration"
+
+    config UP_BUTTON_PIN
+        int "UP GPIO Number"
+        range 0 SOC_GPIO_PIN_COUNT
+        default 7
+        help
+            Número do GPIO (IOxx) para o botão UP.
+
+    config LEFT_BUTTON_PIN
+        int "LEFT GPIO Number"
+        range 0 SOC_GPIO_PIN_COUNT
+        default 6
+        help
+            Número do GPIO (IOxx) para o botão LEFT.
+        
+    config RIGHT_BUTTON_PIN
+        int "RIGHT GPIO Number"
+        range 0 SOC_GPIO_PIN_COUNT
+        default 5
+        help
+            Número do GPIO (IOxx) para o botão RIGHT.
+
+    config DOWN_BUTTON_PIN
+        int "DOWN GPIO Number"
+        range 0 SOC_GPIO_PIN_COUNT
+        default 4
+        help
+            Número do GPIO (IOxx) para o botão DOWN.
+
+    config SAVE_LOG_BUTTON_PIN
+        int "SAVE LOG GPIO Number"
+        range 0 SOC_GPIO_PIN_COUNT
+        default 3
+        help
+            Número do GPIO (IOxx) para o botão de salvar log.
+
+    config BUZZER_BUTTON_PIN
+        int "Enable/Disable BUZZER GPIO Number"
+        range 0 SOC_GPIO_PIN_COUNT
+        default 2
+        help
+            Número do GPIO (IOxx) para o botão de habilitar/desabilitar o buzzer.
+    
+    config FAN_PIN
+        int "FAN GPIO Number"
+        range 0 SOC_GPIO_PIN_COUNT
+        default 14
+        help
+            Número do GPIO (IOxx) para o controle do ventilador.
+
+    config DEFAULT_TEMP_SETPOINT
+        int "Default Setpoint Temperature (°C)"
+        range 0 100
+        default 25
+        help
+            Temperatura de referência padrão (em °C) para o controle do ventilador.
+
+    config DEFAULT_REGISTER_STATUS
+        bool "Default Register Status"
+        default y
+        help
+            Define se o registro de status será habilitado por padrão.
+
+    config DEFAULT_TEMP_CONTROL_STATUS
+        bool "Default Temperature Control Status"
+        default y
+        help
+            Define se o controle de temperatura será habilitado por padrão.
+endmenu
